@@ -12,6 +12,7 @@ function searchBandsInTown(artist) {
     // The artist's name
     let artistName = $("<h3>").text(response.name);
     // The artists thumbnail image
+    let artistImage = $("<img>").attr("src",response.thumb_url);
     // The number of fans tracking this artist
     // The number of upcoming events for this artist
     // A link to the bandsintown url for this artist
