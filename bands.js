@@ -14,10 +14,13 @@ function searchBandsInTown(artist) {
     // The artists thumbnail image
     let artistImage = $("<img>").attr("src",response.thumb_url);
     // The number of fans tracking this artist
-    let fansTracking = $("<h4>").text(response.tracker);
+    let fansTracking = $("<h4>").text(response.tracker_count);
     // The number of upcoming events for this artist
+    let upcomingEvent = $("<h5>").text(response.upcoming_event_count)
     // A link to the bandsintown url for this artist
+    let bandsURL = $("<h6>").text(response.url);
     // Note: Append actual HTML elements, not just text
+    
 }
 // Event handler for user clicking the select-artist button
 $("#select-artist").on("click", function (event) {
