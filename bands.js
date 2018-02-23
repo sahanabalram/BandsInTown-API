@@ -18,9 +18,11 @@ function searchBandsInTown(artist) {
     // The number of upcoming events for this artist
     let upcomingEvent = $("<h5>").text(response.upcoming_event_count)
     // A link to the bandsintown url for this artist
-    let bandsURL = $("<h6>").text(response.url);
+    let bandsURL = $("<a>").attr("href",response.url).append(artistName);
+    let goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
     // Note: Append actual HTML elements, not just text
-    
+    $("#artist-div").empty();
+    $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
 }
 // Event handler for user clicking the select-artist button
 $("#select-artist").on("click", function (event) {
