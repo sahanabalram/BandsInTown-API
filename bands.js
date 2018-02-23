@@ -1,8 +1,16 @@
 function searchBandsInTown(artist) {
     // Add code to query the bands in town api searching for the artist recieved as an argument to this function
     let queryURL = "https://rest.bandsintown.com/artists" + artist + "?app_id=musicLove";
+    $.ajax({
+        method: GET,
+        url: queryURL
+    }).done(function(response){
+        // Console.log the entire response
+        console.log(response);
+    });
     // Using jQuery, append the following to the #artist-div :
     // The artist's name
+    let artistName = $("<h3>").text(response.name);
     // The artists thumbnail image
     // The number of fans tracking this artist
     // The number of upcoming events for this artist
